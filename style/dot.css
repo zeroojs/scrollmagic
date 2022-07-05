@@ -1,0 +1,66 @@
+.dot-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.dot-box {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  background-color: #212532;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .3s;
+  transition-delay: .9s;
+}
+.dot-box.active {
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  transition-delay: 0s;
+}
+
+.dot-box span {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+  transition: .3s ease;
+  transition-delay: calc(.1s * var(--i));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dot-box.active span {
+  width: 45px;
+  height: 45px;
+  background-color: #333849;
+  transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+}
+
+[class*="ri-"] {
+  color: #fff;
+  opacity: 0;
+  font-size: 0;
+  transition: opacity .3s;
+  transition-delay: 0s;
+}
+.dot-box.active [class*="ri-"] {
+  font-size: 24px;
+  opacity: 1;
+  /* transition-delay: .6s; */
+  transition-delay: calc(.1s * var(--i));
+}
+.dot-box.active span:hover [class*="ri-"] {
+  color: #6C63FF;
+  filter: drop-shadow(0 0 2px #6C63FF);
+}

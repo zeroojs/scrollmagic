@@ -1,0 +1,272 @@
+.link {
+  text-decoration: none;
+  color: #009dff;
+  font-weight: 400;
+}
+
+.banner {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.banner .container {
+  width: 100%;
+  position: relative;
+}
+
+.banner .card,
+.banner-content {
+  max-width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner.is-dark {
+  color: #fff;
+  background: black;
+}
+
+.banner.is-dark .card {
+  color: #fff;
+  background: black;
+  font-size: 72px;
+  font-weight: bolder;
+  letter-spacing: 6px;
+  width: 50%;
+
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+.banner.is-dark .banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* UX BEGIN */
+.ux-header,
+.open-source-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.open-source .card,
+.ux .card {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.ux .card-left {
+  width: 40%;
+}
+.ux .card-right {
+  width: 60%;
+  background: url(../images/home-bg.png) center top / 165% no-repeat fixed;
+}
+.card-group {
+  display: grid;
+  grid-template-columns: repeat(2, calc(50% - 10px));
+  column-gap: 20px;
+}
+
+/* 层叠 */
+.cascade {
+  width: 280px;
+  height: 550px;
+	padding: 50px;
+	position: relative;
+	margin: 0 auto;
+}
+.cascade-inner {
+	width: 280px;
+	height: 498px;
+	background: rgba(0 , 0 ,0 ,1);
+	position: absolute;
+	transition: .5s;
+	/*效果*/
+	transform: rotate(-30deg) skew(25deg) scale(.8);
+}
+.cascade-inner img{
+	width: 280px;
+	transition: .5s;
+	position: absolute;
+}
+
+.cascade-active .cascade-inner img:nth-child(4) {
+	transform: translate(80px , -80px);
+	opacity: 1
+}
+.cascade-active .cascade-inner img:nth-child(3) {
+	transform: translate(60px , -60px);
+	opacity: .8
+}
+.cascade-active .cascade-inner img:nth-child(2) {
+	transform: translate(40px , -40px);
+	opacity: .6
+}
+.cascade-active .cascade-inner img:nth-child(1) {
+	transform: translate(20px , -20px);
+	opacity: .4
+}
+.cascade-active .cascade-inner {
+	background: rgba(0 ,0 ,0 , .1);
+	box-shadow: 0 0 45px #aee5ed;
+}
+.link-group {
+  margin-top: 50px;
+}
+.link-group a {
+  display: inline-block;
+  transition: .3s ease;
+}
+.link-group a:first-child {
+  margin-right: 30px;
+}
+.link-group a:hover {
+  transform: rotate(-3deg) skew(5deg) scale(.8);
+}
+
+/* UX END */
+
+/* Open Source BEGIN */
+.open-source-wallper {
+  margin-bottom: 100px;
+}
+.open-source {
+  width: 100%;
+}
+.open-source .card-body {
+  position: relative;
+}
+
+.open-source .card-content {
+  text-align: left;
+  max-width: 300px;
+}
+.ux .card-body p,
+.open-source .card-content p {
+  color: #757575;
+  margin: 50px 0;
+  font: 400 1.332rem/2rem "PingFang SC","Microsoft YaHei","Microsoft JhengHei","黑体",arial,"STHeiti","\5b8b\4f53";
+  font-weight: lighter;
+}
+
+.ux .btn,
+.open-source .btn {
+  color: #fff;
+  background-color: #009dff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #009dff;
+  text-decoration: none;
+  display: inline-block;
+  transition: .3s ease;
+}
+.btn:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 30px #009dff;
+}
+
+.card-view {
+  min-height: 300px;
+}
+.open-source-pc-img {
+  max-width: 400px;
+}
+.open-source-img {
+  width: 200px;
+  border-radius: 36px;
+}
+.open-source-trigger {
+  background: rebeccapurple;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+/* Open Source END */
+
+/* Footer BEGIN */
+.footer {
+  padding: 30px 0;
+  background-color: #fff;
+}
+.footer-item {
+  color: initial;
+  text-decoration: none;
+}
+.zeroojs-logo {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+/* Footer END */
+
+/* 移动端 */
+@media screen and (max-width: 768px) {
+  .card {
+    border-radius: 0;
+  }
+  .banner {
+    width: 100%;
+    overflow: hidden;
+  }
+  .ux .card {
+    margin-bottom: 0;
+  }
+  .ux-header,
+  .open-source-header {
+    margin-bottom: 20px;
+  }
+  .banner .card {
+    min-height: 100px;
+    border-radius: 10px;
+    font-size: 72px;
+  }
+  .ux .card-right,
+  .ux .card-left,
+  .banner.is-dark .card {
+    width: 100%;
+  }
+  .banner.is-dark .card {
+    font-size: 24px;
+    width: 50%;
+  }
+  .ux .flex,
+  .open-source .flex {
+    flex-direction: column;
+  }
+  .open-source-pc-img {
+    margin: 50px 0;
+  }
+  .ux  .link-group {
+    flex-direction: row;
+  }
+  .ux .cascade,
+  .ux .card-right {
+    height: 500px;
+  }
+  .ux .card-right {
+    background: url(https://img.js.design/assets/Resources/background/home-bg-2.png) no-repeat;
+    background-size: cover;
+  }
+  .card-group {
+    grid-template-columns: unset;
+  }
+  .footer {
+    padding: 30px;
+  }
+  .footer .flex {
+    gap: 20px;
+    justify-content: center;
+  }
+  .footer .footer-item:first-child,
+  .footer .footer-item:last-child {
+    display: none;
+  }
+}
